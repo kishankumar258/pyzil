@@ -11,7 +11,7 @@ Email (Gmail): kishankumar.sky@gmail.com
 
 Contact No.: 9793377240
 
-# To study Blockchain and Bitcoin and Ethereum concepts
+## To study Blockchain and Bitcoin and Ethereum concepts
 
 Coursera link: https://www.youtube.com/channel/UCNcSSleedtfyDuhBvOQzFzQ/feed
 
@@ -252,9 +252,11 @@ pprint(contract.last_receipt)
 
 resp = contract.call(method="getHello", params=[])
 pprint(resp)
-pprint(contract.last_receipt)
+pprint(contract.last_receipt) 
 
-##  For setting up local network for testing zilliqa
+```
+
+## For setting up local network for testing zilliqa
 
            Minimum system requirements
 To run Zilliqa, we recommend the following as the minimum system requirements:
