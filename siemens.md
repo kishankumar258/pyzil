@@ -55,6 +55,23 @@ Multi-signatures are a cryptographic primitive to aggregate n signatures on a me
 
 The very detailed blog for multisignatures.
 
+A multi-signature scheme basically runs in two steps. In the first step of the protocol, each node will send its public key to the aggregator. All the public keys are then aggregated to generate a single public key. Depending on the mathematical form of the keys, the aggregation could simply be a simple addition or a multiplication.
+
+E.g., Aggregated Public key = Public key_1 + Public key_2 + …. + Public key_n.
+The aggregated public key can then be forwarded to the verifier who can use it to verify an aggregated signature. The aggregator also sends the message to be signed to each of the signers.
+
+In the second step, the aggregator initiates an interactive protocol with each of the signers. The interactive protocol runs in three phases:
+
+Commit phase: In the commit phase, each node generates some randomness and commits to it. For those who do not understand what a cryptographic commitment is, consider the following analogy: each node will secretly roll a dice, write down the outcome on a sheet of paper and put it in a box, lock it and send it to the aggregator. The aggregator should not be able to open the box.
+
+Challenge phase: In the challenge phase, the aggregator first aggregates each commitment again using addition or multiplication. It then generates a challenge using the aggregated commitment, the aggregated public key and the message. The challenge is then sent to each node. The challenge is later used to confirm that each node indeed knows the private key for the public key. This is similar to how regular digital signatures work, where a signature proves that the signer indeed knows the private key.
+
+Response phase: Each node then responds to the challenge by sending a response that requires the use of its private key. Responses are then aggregated by the aggregator. Each response is sort of a proof that the signer knows the private key for its public key.
+The final aggregated signature is then the pair (challenge, aggregated response) which can be verified against the aggregated public key generated in the first step.
+
+Note that the size of the aggregated signature is constant and does not depend on the number of signers.
+When the verifier checks the aggregated signature, it does not check whether each signer has properly followed the protocol, it only checks whether all the signers have collectively followed the protocol and have proven the knowledge of their private keys. Hence, the verifier makes an all-or-nothing decision.
+
 https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-piece-part-3-making-consensus-efficient-7a9c569a8f0e
 .
 
