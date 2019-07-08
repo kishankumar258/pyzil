@@ -134,56 +134,73 @@ also nonce is need to be written inside the params block and the address must be
 
 So we need to make transactions from the method given on pyzil github repository by first importing these library of python
       
+### Import pyzil
+```python
 from pprint import pprint
+
 from pyzil.crypto import zilkey
 from pyzil.zilliqa import chain
 from pyzil.zilliqa.units import Zil, Qa
 from pyzil.account import Account, BatchTransfer
+```
 
  
-## Set Active Chain, MainNet or TestNet
+#### Set Active Chain, MainNet or TestNet
+```python
+chain.set_active_chain(chain.MainNet)  
+```  
 
-chain.set_active_chain(chain.MainNet)
-
-
-## ZILs Transaction
-load account from wallet address
+#### ZILs Transaction
+```python
+# load account from wallet address
 account = Account(address="95B27EC211F86748DD985E1424B4058E94AA5814")
 balance = account.get_balance()
 print("{}: {}".format(account, balance))
-#load account from private key
-#private key is required to send ZILs
+
+# load account from private key
+# private key is required to send ZILs
 account = Account(private_key="05C3CF3387F31202CD0798B7AA882327A1BD365331F90954A58C18F61BD08FFC")
 balance2 = account.get_balance()
 print("Account balance: {}".format(balance2))
-#to_addr must be bech32 address or 20 bytes checksum address
-to_addr ="zil1k5xzgp8xn87eshm3ktplqvs9nufav4pmcm52xx"
 
-## Send ZILs
+# to_addr must be bech32 address or 20 bytes checksum address
+to_addr = "zil1k5xzgp8xn87eshm3ktplqvs9nufav4pmcm52xx"
+# send ZILs
 txn_info = account.transfer(to_addr=to_addr, zils=2.718)
 pprint(txn_info)
 txn_id = txn_info["TranID"]
-## wait chain confirm, may takes 2-3 minutes on MainNet
+
+# wait chain confirm, may takes 2-3 minutes on MainNet
 txn_details = account.wait_txn_confirm(txn_id, timeout=300)
 pprint(txn_details)
 if txn_details and txn_details["receipt"]["success"]:
-print(&quot;Txn success: {}&quot;.format(txn\_id))
+    print("Txn success: {}".format(txn_id))
 else:
-print(&quot;Txn failed: {}&quot;.format(txn\_id))
+    print("Txn failed: {}".format(txn_id))
+```  
+
 
 ## Now, we can see that the chain library needs to be set and it supports mainnet and testnet only.
 
 ## Contract Deployment on MainNet or TestNet.
 Contracts can be deployed on testnet or mainnet as on the github repo from pprint import pprint
 
+## Zilliqa Smart Contract
+```python
+from pprint import pprint
 from pyzil.zilliqa import chain
 from pyzil.account import Account
 from pyzil.contract import Contract
-chain.set_active_chain(chain.TestNet)
-account = Account.from_keystore("zxcvbnm,", "zilliqa_keystore.json")
 
-          # Get contract from address
-address ="45dca9586598c8af78b191eaa28daf2b0a0b4f43"
+
+chain.set_active_chain(chain.TestNet)
+
+account = Account.from_keystore("zxcvbnm,", "zilliqa_keystore.json")
+```
+
+### Get contract from address
+```python
+address = "45dca9586598c8af78b191eaa28daf2b0a0b4f43"
 contract = Contract.load_from_address(address, load_state=True)
 print(contract)
 print(contract.status)
@@ -192,38 +209,47 @@ contract.get_state(get_code=True, get_init=True)
 pprint(contract.code)
 pprint(contract.init)
 pprint(contract.state)
+```
 
-       # New contract from code
-                      
-code =open("HelloWorld.scilla").read()
+### New contract from code
+```python
+code = open("HelloWorld.scilla").read()
 contract = Contract.new_from_code(code)
 print(contract)
 
-      #  set account before deploy
-      
+# set account before deploy
 contract.account = account
+
 contract.deploy(timeout=300, sleep=10)
 assert contract.status == Contract.Status.Deployed
+```
 
-               # Get contracts
-
+### Get contracts
+```python
 owner_addr = account.address
 contracts = Contract.get_contracts(owner_addr)
 pprint(contracts)
 contracts2 = account.get_contracts()
 pprint(contracts2)
-assert contracts == contracts2
 
-             #   Call contract
-contract_addr ="45dca9586598c8af78b191eaa28daf2b0a0b4f43"
+assert contracts == contracts2
+```
+
+### Call contract
+```python
+contract_addr = "45dca9586598c8af78b191eaa28daf2b0a0b4f43"
 contract = Contract.load_from_address(contract_addr)
+
 contract.account = account
+
 resp = contract.call(method="getHello", params=[])
 pprint(resp)
 pprint(contract.last_receipt)
+
 resp = contract.call(method="setHello", params=[Contract.value_dict("msg", "String", "hi contract.")])
 pprint(resp)
 pprint(contract.last_receipt)
+
 resp = contract.call(method="getHello", params=[])
 pprint(resp)
 pprint(contract.last_receipt)
