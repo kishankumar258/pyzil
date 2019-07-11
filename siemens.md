@@ -275,33 +275,38 @@ pprint(contract.last_receipt)
 
 ## For setting up local network for testing zilliqa
 
-           Minimum system requirements
+## Minimum system requirements
 
 To run Zilliqa, we recommend the following as the minimum system requirements:
 
-x64 Linux operating system such as Ubuntu
+* x64 _Linux_ operating system such as _Ubuntu_
+* Intel i5 processor or later
+* 2 GB RAM or higher
 
-Intel i5 processor or later
+## Build Dependencies
 
-2 GB RAM or higher
+* Ubuntu 16.04:
 
-Build Dependencies
+    ```bash
+    sudo apt-get update
+    sudo apt-get install git libboost-system-dev libboost-filesystem-dev libboost-test-dev \
+        libssl-dev libleveldb-dev libjsoncpp-dev libsnappy-dev cmake libmicrohttpd-dev \
+        libjsonrpccpp-dev build-essential pkg-config libevent-dev libminiupnpc-dev \
+        libprotobuf-dev protobuf-compiler libcurl4-openssl-dev libboost-program-options-dev gawk
+    ```
 
-Ubuntu 18.04
-
-
-##  Build from Source Code
+## Build from Source Code
 
 Build Zilliqa from the source:
 
-download the lastest stable Zilliqa source code
-
+```shell
+# download the lastest stable Zilliqa source code
 $ git clone git@github.com:Zilliqa/Zilliqa.git
 $ cd Zilliqa && git checkout tag/v4.6.1
 
-                build Zilliqa binary
+# build Zilliqa binary
 $ ./build.sh
-
+```
 
 # Boot up a local testnet for development
 Run the local testnet script in build directory:
