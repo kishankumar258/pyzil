@@ -276,6 +276,7 @@ pprint(contract.last_receipt)
 ## For setting up local network for testing zilliqa
 
            Minimum system requirements
+
 To run Zilliqa, we recommend the following as the minimum system requirements:
 
 x64 Linux operating system such as Ubuntu
