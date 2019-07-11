@@ -413,7 +413,26 @@ To install the scilla binary fitsr install the scilla dependencies. As in the gi
 
 Make sure opam version is 4.06 and also needs to download the opam package ctypes as that was not accessible
 
-For larger contracts deployment
+# Conclusion
+
+1-Zilliqa could find its use in various industries use case owing to its high throughput values.
+
+2-Sharding has been shown through the thread testing,
+
+3-A lot things were not properly documented for local network of nodes. Now, its possible using the codes in python.
+
+4-Contract deployment further adds value to Zilliqa.
+
+# Future Work
+
+1- Contract Deployment for local network was not activated. It will be activated and the dependency is already installed on the system .This could be done in now using the provided codes.
+
+2-One could make a docker image for this whole scripts and dependency on a ubuntu container.
+
+Now basically only scilla image could be found on the docker repository.
+
+3-Jmeter or any other stress testing tool could be used on local network to get the claimed throughput of testnet. 
+
 
 
 
