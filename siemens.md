@@ -127,8 +127,13 @@ Once the installation is complete, verify the installation by checking the pip v
 The version number may vary, but it will look something like this:
 pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
 
-4-  `enter code here`
+## Install
+
+```shell
+pip install pyzil
+```
 or from source
+```shell
 git clone https://github.com/deepgully/pyzil
 cd pyzil
 pip install -r requirements.txt
