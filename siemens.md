@@ -433,11 +433,7 @@ Now basically only scilla image could be found on the docker repository.
 
 3-Jmeter or any other stress testing tool could be used on local network to get the claimed throughput of testnet. 
 
-
-
-
-
-For reading use only
+# For reading use 
 
 Documentation: https://apidocs.zilliqa.com/?python#introduction
 
@@ -445,7 +441,7 @@ Python api: https://github.com/deepgully/pyzil
 
 Java Api: https://github.com/Zilliqa/Zilliqa-JavaScript-Library
 
-https://docs.zilliqa.com/techfaq.pdf Zilliqa FAQ
+Zilliqa FAQ: https://docs.zilliqa.com/techfaq.pdf 
 
 the python files are written in python 2 while zilliqa runs mainly on python 3 the pyzil one
 
@@ -455,7 +451,6 @@ Python 2 allows automatic change while python3 lacks it. have a lok
 
 https://github.com/Zilliqa/Zilliqa/pull/120
 
-some details for docker image container
 
 A very good video to understand docker networking using bridge connections and how to create and ping containers
 
@@ -465,7 +460,7 @@ A good link for quick ziliqa overview
 
 https://info.binance.com/en/research/ZIL-2019-05-15.html#section1
 
-References:
+# References:
 
 Github repo of zilliqa: https://github.com/Zilliqa/Zilliqa
 
@@ -475,6 +470,3 @@ JSON api documentation: https://apidocs.zilliqa.com/#introduction
 
 Help provided on the topics mostly on gitter channel of zilliqa https://gitter.im/Zilliqa/General?source=orgpage by evesnow91 https://github.com/evesnow91
 
-And AmritKumar
-
-Sending 100ZIL
