@@ -109,4 +109,15 @@ To terminate Zilliqa:
 
 $ pkill zilliqa
 
+## Interaction between the local network and User
+
+1.local_run folder inside build directory stores the nodes and their keys and logs containing public address.
+
+2.lookup_local_run inside build directory has the lookup node with its key and logs containing public address.
+
+3."zil.py" code could be used to send transaction on the local network. Private key can be found inside the local_run folder while the public address is found inside the zilliqa-logs text file.This could be copy pasted once the netwrok is setup.
+
+4.For "zil.py" one can copy keys.txt file from local_run folder to the place of "zil.py" to import the keys through the code inside the zil.py code.
+
+5."zil1234.py" could be used to have a loop of transactions after pasting the private keys and the public address of the local node.
 
