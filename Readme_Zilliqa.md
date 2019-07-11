@@ -47,11 +47,11 @@ python setup.py install
 
 1.Private key for the account from which ZILs is to send is needed.
 
-2-Public address to which the ZILs are to send is needed.
+2.Public address to which the ZILs are to send is needed.
 
 "Send_testnet.py" could be used for having a cycle of transaction.
 
-1-4 accounts needs to be created to use this.
+1. 4 accounts needs to be created to use this.
 
 # For Local Setup
 
