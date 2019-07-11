@@ -138,6 +138,7 @@ git clone https://github.com/deepgully/pyzil
 cd pyzil
 pip install -r requirements.txt
 python setup.py install
+```
 
 ## Note on api docs
 The whole api docs for zilliqa can be found at: https://apidocs.zilliqa.com/?python#getnetworkid
