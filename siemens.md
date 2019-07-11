@@ -280,9 +280,13 @@ pprint(contract.last_receipt)
 To run Zilliqa, we recommend the following as the minimum system requirements:
 
 x64 Linux operating system such as Ubuntu
+
 Intel i5 processor or later
+
 2 GB RAM or higher
+
 Build Dependencies
+
 Ubuntu 18.04
 
 
