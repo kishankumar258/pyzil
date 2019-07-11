@@ -391,7 +391,7 @@ When we ran the scripts for blockchain creation, we got the local_run folder in 
 
 ## More Development 
 
-Define lookup node here.
+The lookup node serves as a transaction allocator (something like a DNS) to ensure that the transactions are allocated to the correct shard. Transactions are allocated to each shard according to the last bit of the sender address.-from evesnow on gitter channel of zilliqa.
 
 Now in the node folder we can find that in zilliqa logs the address of lookup node. Similarly, In the node folder inside local run opening the zilliqa logs you get the information on the address of the node.This is the checksum address when we add'0x"I the start and can be used to getbalance and other scripts. But when sending transactions to testnet or mainnet this checksum address will work but when sending on LocalNet this gives and error. Therefore, chatting on zilliqa forum I get his thing
 
@@ -403,11 +403,7 @@ to_addr=bech32.encode("zil", utils.hex_str_to_bytes(to_addr))
 
 after importing necessary pyzil library codes.
 
-The zil.py file is uploaded to the forked repository of pyzil at
-
-https://github.com/kishankumar258/pyzil/blob/master/pyzil/zilliqa/zil.py.
-
-This could be run in python 3 after starting the blockchain and
+"zil.py" code can be used for transactions
 
 Smart Contract Trasnsaction on the local network
 
@@ -415,7 +411,7 @@ Smart Contracts are not enabled by default and knew on this as of gitter channel
 
 
 
-To install the scilla binary fitsr install the scilla dependencies. As in the github repo
+To run smart contracts install the scilla dependencies. As in the github repo
 
 Make sure opam version is 4.06 and also needs to download the opam package ctypes as that was not accessible
 
