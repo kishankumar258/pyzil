@@ -449,8 +449,15 @@ the python files are written in python 2 while zilliqa runs mainly on python 3 t
 
 one small but important error was concatenating byte and strings in python 3 and python2.
 
-Python 2 allows automatic change while python3 lacks it. have a lok
+Python 2 allows automatic change while python3 lacks it. 
 
+Questions were asked on Zilliqa forums and gitter chanel
+Links:
+1. https://github.com/Zilliqa/Zilliqa/issues
+2. https://gitter.im/Zilliqa/General
+3. https://gitter.im/Zilliqa/SmartContract
+
+For some docker related questions:
 https://github.com/Zilliqa/Zilliqa/pull/120
 
 
