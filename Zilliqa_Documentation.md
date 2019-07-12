@@ -348,7 +348,7 @@ NOTE : The master branch is not for production as development is currently being
 
 ## Development and Code along with errors and their solutions
 
-Github repo of zilliqa provides the scripts for running a network of zilliqa nodes locally and we can interact with the blockchain using the same api as that of mainnet or testnet bu the problem is chain supports only mainnet or testnet so the method was by setting the endpoint as
+Github repo of zilliqa provides the scripts for running a network of zilliqa nodes locally and we can interact with the blockchain using the same api as that of mainnet or testnet but the problem is chain supports only mainnet or testnet so the method was by setting the endpoint as
 
 new_api=ZilliqaAPI(endpoint="http://localhost:4201")
 
